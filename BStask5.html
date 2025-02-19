@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Styled Form</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .container {
+        max-width: 600px;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .form-label {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+      }
+      .input-group-text {
+        background-color: #eee;
+      }
+      .btn-send {
+        background-color: #f39c12;
+        color: white;
+        border: none;
+      }
+      .btn-send:hover {
+        background-color: #e67e22;
+      }
+      .btn-center {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h4 class="mb-3 text-center">Contact Form</h4>
+
+      <form>
+        <!-- First Name -->
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">First Name</label>
+          <div class="col-sm-9 input-group">
+            <span class="input-group-text"><i class="fa fa-user"></i></span>
+            <input type="text" class="form-control" placeholder="First Name" />
+          </div>
+        </div>
+
+        <!-- Last Name -->
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Last Name</label>
+          <div class="col-sm-9 input-group">
+            <span class="input-group-text"><i class="fa fa-user"></i></span>
+            <input type="text" class="form-control" placeholder="Last Name" />
+          </div>
+        </div>
+
+        <!-- E-Mail -->
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">E-Mail</label>
+          <div class="col-sm-9 input-group">
+            <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="E-Mail Address"
+            />
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Phone #</label>
+          <div class="col-sm-9 input-group">
+            <span class="input-group-text"><i class="fa fa-phone"></i></span>
+            <input
+              type="tel"
+              class="form-control"
+              placeholder="(845)555-1212"
+            />
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Address</label>
+          <div class="col-sm-9 input-group">
+            <span class="input-group-text"><i class="fa fa-home"></i></span>
+            <input type="text" class="form-control" placeholder="Address" />
+          </div>
+        </div>
+
+        <!-- City -->
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">City</label>
+          <div class="col-sm-9 input-group">
+            <span class="input-group-text"><i class="fa fa-home"></i></span>
+            <input type="text" class="form-control" placeholder="City" />
+          </div>
+        </div>
+
+        <!-- State Dropdown -->
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">State</label>
+          <div class="col-sm-9 input-group">
+            <span class="input-group-text"><i class="fa fa-list"></i></span>
+            <select class="form-control">
+              <option>Please select your state</option>
+              <option>New York</option>
+              <option>California</option>
+              <option>Texas</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Hosting Question -->
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Do you have hosting?</label>
+          <div class="col-sm-9 d-flex align-items-center">
+            <div class="form-check me-3">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="hosting"
+                id="hostingYes"
+              />
+              <label class="form-check-label" for="hostingYes">Yes</label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="hosting"
+                id="hostingNo"
+              />
+              <label class="form-check-label" for="hostingNo">No</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Description (Fixed to Be in Same Row) -->
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Project Description</label>
+          <div class="col-sm-9">
+            <div class="input-group">
+              <span class="input-group-text"
+                ><i class="fa fa-pencil-alt"></i
+              ></span>
+              <textarea
+                class="form-control"
+                rows="3"
+                placeholder="Project Description"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button (Centered) -->
+        <div class="row">
+          <div class="col-sm-12 btn-center">
+            <button type="submit" class="btn btn-send">
+              <i class="fa fa-paper-plane"></i> Send
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

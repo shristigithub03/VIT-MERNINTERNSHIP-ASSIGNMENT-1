@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Page</title>
+    <style>
+        /* Container Box */
+        .container {
+            width: 700px;
+            background-color: #d6d13a; /* Yellow Box */
+            padding: 20px;
+            border: 1px solid gray;
+            margin: 20px auto;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 150px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            width: 120px;
+            background-color: white; /* White Box */
+            text-decoration: none;
+            color: purple;
+            padding: 5px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            border-left: 10px solid black; /* Black Sidebar */
+        }
+
+        /* Header */
+        h1 {
+            color: purple;
+            font-size: 26px;
+        }
+
+        /* Main Content */
+        .content {
+            color: black;
+            font-size: 16px;
+        }
+
+        .content em {
+            color: black;
+            font-style: italic;
+        }
+
+        /* Footer */
+        hr {
+            margin-top: 20px;
+        }
+
+        .footer {
+            font-style: italic;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <div class="sidebar">
+            <a href="#">Home page</a>
+            <a href="#">Musings</a>
+            <a href="#">My town</a>
+            <a href="#">Links</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <h1>My first styled page</h1>
+            <p>Welcome to my styled page!</p>
+            <p>It lacks images, but at least it has style. And it has links, even if they don't go anywhere...</p>
+            <p>There should be more here, but I don't know what yet.</p>
+            <hr>
+            <p class="footer"><em>Made 5 April 2004 <br> by myself.</em></p>
+        </div>
+    </div>
+
+</body>
+</html>
