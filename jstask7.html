@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Train Animation</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        img {
+            position: absolute;
+            left: 0;
+            top: 100px;
+            width: 200px; /* Adjust size if needed */
+        }
+        h2 {
+            color: navy;
+        }
+        button {
+            font-size: 16px;
+            padding: 5px 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="train" src="train image.png" alt="Moving Train">
+
+    <h2>Click the following buttons to handle animation</h2>
+    
+    <button onclick="startTrain()">Start</button>
+    <button onclick="stopTrain()">Stop</button>
+
+    <script>
+        let train = document.getElementById("train");
+        let position = 0;
+        let trainInterval;
+
+        function startTrain() {
+            if (!trainInterval) {
+                trainInterval = setInterval(() => {
+                    position += 5; // Move right by 5px
+                    train.style.left = position + "px";
+
+                    // Reset position when train reaches the right end
+                    if (position > window.innerWidth - train.width) {
+                        position = 0;
+                    }
+                }, 50); // Speed of movement
+            }
+        }
+
+        function stopTrain() {
+            clearInterval(trainInterval);
+            trainInterval = null;
+        }
+    </script>
+
+</body>
+</html>

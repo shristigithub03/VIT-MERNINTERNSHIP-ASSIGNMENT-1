@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        input, textarea {
+            border: 1px solid #ccc;
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 250px;
+            display: block;
+        }
+        .error-border {
+            border: 2px solid red;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <span class="error" id="nameError"></span>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email">
+        <span class="error" id="emailError"></span>
+
+        <label for="website">Website:</label>
+        <input type="text" id="website">
+        <span class="error" id="websiteError"></span>
+
+        <label for="message">Message:</label>
+        <textarea id="message"></textarea>
+        <span class="error" id="messageError"></span>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            let valid = true;
+
+            // Clear previous error messages
+            document.querySelectorAll(".error").forEach(el => el.textContent = "");
+            document.querySelectorAll("input, textarea").forEach(el => el.classList.remove("error-border"));
+
+            // Name validation
+            const name = document.getElementById("name").value.trim();
+            if (name === "") {
+                document.getElementById("nameError").textContent = "This field is required";
+                document.getElementById("name").classList.add("error-border");
+                valid = false;
+            }
+
+            // Email validation
+            const email = document.getElementById("email").value.trim();
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === "") {
+                document.getElementById("emailError").textContent = "A valid email address is required";
+                document.getElementById("email").classList.add("error-border");
+                valid = false;
+            } else if (!emailPattern.test(email)) {
+                document.getElementById("emailError").textContent = "Invalid email format";
+                document.getElementById("email").classList.add("error-border");
+                valid = false;
+            }
+
+            // Website validation
+            const website = document.getElementById("website").value.trim();
+            const urlPattern = /^(https?:\/\/)?([\w\d-]+\.)+\w{2,}(\/.*)?$/;
+            if (website === "") {
+                document.getElementById("websiteError").textContent = "A valid URL is required";
+                document.getElementById("website").classList.add("error-border");
+                valid = false;
+            } else if (!urlPattern.test(website)) {
+                document.getElementById("websiteError").textContent = "Invalid URL format";
+                document.getElementById("website").classList.add("error-border");
+                valid = false;
+            }
+
+            // Message validation
+            const message = document.getElementById("message").value.trim();
+            if (message === "") {
+                document.getElementById("messageError").textContent = "This field is required";
+                document.getElementById("message").classList.add("error-border");
+                valid = false;
+            }
+
+            if (!valid) {
+                event.preventDefault(); // Prevent form submission if validation fails
+            }
+        });
+    </script>
+
+</body>
+</html>
